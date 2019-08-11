@@ -5,8 +5,8 @@ module.exports = {
     entry: './src/index.ts',
     output: {
         path: path.resolve(__dirname, 'dist/min'),
-        filename: 'waves-transactions.min.js',
-        library: 'WavesTransactions',
+        filename: 'bancoin-transactions.min.js',
+        library: 'BancoinTransactions',
         libraryTarget: 'umd'
     },
     plugins: [],

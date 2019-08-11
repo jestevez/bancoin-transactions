@@ -47,7 +47,7 @@ export interface WithChainId {
   /**
    * Network byte.
    * E.g.,
-   * 87 is used for Waves mainnet, 84 for Waves testnet
+   * 87 is used for Bancoin mainnet, 84 for Bancoin testnet
    */
   chainId: number
 }

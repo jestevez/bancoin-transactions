@@ -2,8 +2,8 @@
  * @module index
  */
 import axios from 'axios'
-import { binary, json } from '@waves/marshall'
-import { address, verifySignature } from '@waves/ts-lib-crypto'
+import { binary, json } from '@bancoin/marshall'
+import { address, verifySignature } from '@bancoin/ts-lib-crypto'
 import {
   IAliasTransaction,
   IBurnTransaction,
@@ -108,7 +108,7 @@ export function verifyAuthData(authData: { signature: string, publicKey: string,
 /**
  * Sends order to matcher
  * @param ord - transaction to send
- * @param matcherUrl - matcher address to send order to. E.g. https://matcher.wavesplatform.com/
+ * @param matcherUrl - matcher address to send order to. E.g. https://matcher.bancoinplatform.com/
  */
 export function submitOrder(ord: TOrder, matcherUrl: string) {
   return axios.post('matcher/orderbook', json.stringifyOrder(ord), {
@@ -125,10 +125,10 @@ export function submitOrder(ord: TOrder, matcherUrl: string) {
  * @param co - signed cancelOrder object
  * @param amountAsset - amount asset of the order to be canceled
  * @param priceAsset - price asset of the order to be canceled
- * @param matcherUrl - matcher address to send order cancel to. E.g. https://matcher.wavesplatform.com/
+ * @param matcherUrl - matcher address to send order cancel to. E.g. https://matcher.bancoinplatform.com/
  */
 export function cancelSubmittedOrder(co: ICancelOrder, amountAsset: string | null, priceAsset: string | null, matcherUrl: string) {
-  return axios.post(`matcher/orderbook/${amountAsset || 'WAVES'}/${priceAsset || 'WAVES'}/cancel`, JSON.stringify(co), {
+  return axios.post(`matcher/orderbook/${amountAsset || 'BCT'}/${priceAsset || 'BCT'}/cancel`, JSON.stringify(co), {
     baseURL: matcherUrl,
     headers: { 'content-type': 'application/json' },
   })

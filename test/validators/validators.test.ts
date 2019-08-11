@@ -78,7 +78,7 @@ describe('Validators', () => {
             expect(validators.isNumberLike(new Number(0))).toBe(true)
         })
         
-        it('Valid Waves Address', () => {
+        it('Valid Bancoin Address', () => {
             expect(validators.isValidAddress(null)).toBe(false)
             expect(validators.isValidAddress(Object.create(null))).toBe(false)
             expect(validators.isValidAddress('3PCAB4sHXgvtu5NPoen6EXR5yaNbvsEA8Fj')).toBe(true)
@@ -88,7 +88,7 @@ describe('Validators', () => {
             expect(validators.isValidAddress('3PCAB4sHXgvtu5NPoen6EXR5yaNbvsEA8Fa')).toBe(false)
         })
         
-        it('Valid Waves Alias', () => {
+        it('Valid Bancoin Alias', () => {
             expect(validators.isValidAlias('alias:W:test')).toBe(true)
             expect(validators.isValidAlias('alias:T:test1')).toBe(true)
             expect(validators.isValidAlias('alias:T:helloisalongaliasfortestwith30')).toBe(true)
@@ -222,7 +222,7 @@ describe('Validators', () => {
         it('Validate assetId', () => {
             expect(validators.isAssetId('474jTeYx2r2Va35794tCScAXWJG9hU2HcgxzMowaZUnu')).toBe(true)
             expect(validators.isAssetId(null)).toBe(true)
-            expect(validators.isAssetId('WAVES')).toBe(true)
+            expect(validators.isAssetId('BCT')).toBe(true)
         })
         
         it('Validate by schema', () => {
@@ -268,12 +268,12 @@ describe('Validators', () => {
                 type: TRANSACTION_TYPE.TRANSFER,
                 version: 2,
                 senderPublicKey: '2M25DqL2W4rGFLCFadgATboS8EPqyWAN3DjH12AH5Kdr',
-                assetId: 'WAVES',
+                assetId: 'BCT',
                 recipient: 'alias:W:test',
                 amount: 100000,
                 attachment: null,
                 fee: 100000,
-                feeAssetId: 'WAVES',
+                feeAssetId: 'BCT',
                 timestamp: Date.now(),
             } as any
    

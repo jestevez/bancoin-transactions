@@ -1,4 +1,4 @@
-# waves-transactions  [![npm version](https://badge.fury.io/js/%40waves%2Fwaves-transactions.svg)](https://badge.fury.io/js/%40waves%2Fwaves-transactions)
+# bancoin-transactions  [![npm version](https://badge.fury.io/js/%40bancoin%2Fbancoin-transactions.svg)](https://badge.fury.io/js/%40bancoin%2Fbancoin-transactions)
 
 [![License][license-image]][license-url] ![Coverage badge gree][coverage-badge-green]
 
@@ -6,34 +6,34 @@
 [license-image]: https://img.shields.io/npm/l/make-coverage-badge.svg
 [coverage-badge-green]:https://img.shields.io/badge/Coverage-98.77%25-brightgreen.svg
 
-Using this library you can easily create and sign transactions for Waves blockchain.
+Using this library you can easily create and sign transactions for Bancoin blockchain.
 It also allows you to multi-sign existing transactions or create them without signature at all.
 
 This library is a set of transaction constructing functions:
-* [Alias](https://wavesplatform.github.io/waves-transactions/globals.html#alias)
-* [Issue](https://wavesplatform.github.io/waves-transactions/globals.html#issue)
-* [Reissue](https://wavesplatform.github.io/waves-transactions/globals.html#reissue)
-* [Burn](https://wavesplatform.github.io/waves-transactions/globals.html#burn)
-* [Lease](https://wavesplatform.github.io/waves-transactions/globals.html#lease)
-* [Cancel lease](https://wavesplatform.github.io/waves-transactions/globals.html#cancellease)
-* [Transfer](https://wavesplatform.github.io/waves-transactions/globals.html#transfer)
-* [Mass transfer](https://wavesplatform.github.io/waves-transactions/globals.html#masstransfer)
-* [Set script](https://wavesplatform.github.io/waves-transactions/globals.html#setscript)
-* [Data](https://wavesplatform.github.io/waves-transactions/globals.html#data)
-* [Sponsorship](https://wavesplatform.github.io/waves-transactions/globals.html#sponsorship)
-* [Set asset script](https://wavesplatform.github.io/waves-transactions/globals.html#setassetscript)
-* [InvokeScript](https://wavesplatform.github.io/waves-transactions/globals.html#invokescript)
-* [Order](https://wavesplatform.github.io/waves-transactions/globals.html#order)
+* [Alias](https://bancoinplatform.github.io/bancoin-transactions/globals.html#alias)
+* [Issue](https://bancoinplatform.github.io/bancoin-transactions/globals.html#issue)
+* [Reissue](https://bancoinplatform.github.io/bancoin-transactions/globals.html#reissue)
+* [Burn](https://bancoinplatform.github.io/bancoin-transactions/globals.html#burn)
+* [Lease](https://bancoinplatform.github.io/bancoin-transactions/globals.html#lease)
+* [Cancel lease](https://bancoinplatform.github.io/bancoin-transactions/globals.html#cancellease)
+* [Transfer](https://bancoinplatform.github.io/bancoin-transactions/globals.html#transfer)
+* [Mass transfer](https://bancoinplatform.github.io/bancoin-transactions/globals.html#masstransfer)
+* [Set script](https://bancoinplatform.github.io/bancoin-transactions/globals.html#setscript)
+* [Data](https://bancoinplatform.github.io/bancoin-transactions/globals.html#data)
+* [Sponsorship](https://bancoinplatform.github.io/bancoin-transactions/globals.html#sponsorship)
+* [Set asset script](https://bancoinplatform.github.io/bancoin-transactions/globals.html#setassetscript)
+* [InvokeScript](https://bancoinplatform.github.io/bancoin-transactions/globals.html#invokescript)
+* [Order](https://bancoinplatform.github.io/bancoin-transactions/globals.html#order)
 
-Check full documentation on [GitHub Pages](https://wavesplatform.github.io/waves-transactions/index.html).
+Check full documentation on [GitHub Pages](https://bancoinplatform.github.io/bancoin-transactions/index.html).
 
 ### Transactions
 
 The idea is really simple - you create transaction and sign it from a minimal set of required params.
-If you want to create [Transfer transaction](https://wavesplatform.github.io/waves-transactions/interfaces/itransfertransaction.html) the minimum you need to provide is **amount** and **recipient** as defined in [Transfer params](https://wavesplatform.github.io/waves-transactions/interfaces/itransferparams.html):
+If you want to create [Transfer transaction](https://bancoinplatform.github.io/bancoin-transactions/interfaces/itransfertransaction.html) the minimum you need to provide is **amount** and **recipient** as defined in [Transfer params](https://bancoinplatform.github.io/bancoin-transactions/interfaces/itransferparams.html):
 ```js
 
-const { transfer } = require('@waves/waves-transactions')
+const { transfer } = require('@bancoin/bancoin-transactions')
 const seed = 'some example seed phrase'
 const signedTranserTx = transfer({ 
   amount: 1,
@@ -80,7 +80,7 @@ const unsignedTransferTx = transfer({
 })
 ```
 
-Now you are able to POST it to Waves API or store for future purpose or you can add another signature from other party:
+Now you are able to POST it to Bancoin API or store for future purpose or you can add another signature from other party:
 ```js
 const otherPartySeed = 'other party seed phrase'
 const transferSignedWithTwoParties = transfer(signedTranserTx, seed)
@@ -108,16 +108,16 @@ So now there are two proofs:
 ```
 
 ### Broadcast
-To send transaction you can use either node [REST API](https://nodes.wavesplatform.com/api-docs/index.html#!/transactions/broadcast) or [broadcast](https://wavesplatform.github.io/waves-transactions/globals.html#broadcast) helper function:
+To send transaction you can use either node [REST API](https://nodes.bancoinplatform.com/api-docs/index.html#!/transactions/broadcast) or [broadcast](https://bancoinplatform.github.io/bancoin-transactions/globals.html#broadcast) helper function:
 ```javascript
-const {broadcast} =  require('@waves/waves-transactions');
-const nodeUrl = 'https://nodes.wavesplatform.com';
+const {broadcast} =  require('@bancoin/bancoin-transactions');
+const nodeUrl = 'https://nodes.bancoinplatform.com';
 
 broadcast(signedTx, nodeUrl).then(resp => console.log(resp))
 ```
-You can send tx to any waves node you like:. E.g.:
-* https://testnodes.wavesnodes.com - waves TESTNET nodes hosted by Wavesplatform
-* https://nodes.wavesplatform.com - waves MAINNET nodes hosted by Wavesplatform
+You can send tx to any bancoin node you like:. E.g.:
+* https://testnodes.bancoinnodes.com - bancoin TESTNET nodes hosted by Bancoinplatform
+* https://nodes.bancoinplatform.com - bancoin MAINNET nodes hosted by Bancoinplatform
 #### Important!!!
-Most transactions require chainId as parameter, e.g: [IBurnParams](https://wavesplatform.github.io/waves-transactions/interfaces/iburnparams.html). By default chainId is 'W', which means MAINNET. To make transaction in TESTNET be sure to pass chainId if it is present in params interface and then send it to TESTNET node
+Most transactions require chainId as parameter, e.g: [IBurnParams](https://bancoinplatform.github.io/bancoin-transactions/interfaces/iburnparams.html). By default chainId is 'W', which means MAINNET. To make transaction in TESTNET be sure to pass chainId if it is present in params interface and then send it to TESTNET node
 

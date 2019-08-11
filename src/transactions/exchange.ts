@@ -9,8 +9,8 @@ import {
   ITransferTransaction,
   IOrder
 } from '../transactions'
-import { binary } from '@waves/marshall'
-import { signBytes, blake2b, base58Encode } from '@waves/ts-lib-crypto'
+import { binary } from '@bancoin/marshall'
+import { signBytes, blake2b, base58Encode } from '@bancoin/ts-lib-crypto'
 import { addProof, getSenderPublicKey, convertToPairs, fee, normalizeAssetId } from '../generic'
 import { TSeedTypes } from '../types'
 import { validate } from '../validators'

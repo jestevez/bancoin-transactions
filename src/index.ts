@@ -82,8 +82,8 @@ export {
 } from './types'
 
 // internal libraries access
-import * as crypto from '@waves/ts-lib-crypto'
-import * as marshall from '@waves/marshall'
+import * as crypto from '@bancoin/ts-lib-crypto'
+import * as marshall from '@bancoin/marshall'
 
 const libs = {
   crypto,

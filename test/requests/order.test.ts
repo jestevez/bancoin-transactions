@@ -1,5 +1,5 @@
-import { publicKey, verifySignature } from '@waves/ts-lib-crypto'
-import { binary } from '@waves/marshall'
+import { publicKey, verifySignature } from '@bancoin/ts-lib-crypto'
+import { binary } from '@bancoin/marshall'
 import { order } from '../../src/index'
 import { orderMinimalParams } from '../minimalParams'
 

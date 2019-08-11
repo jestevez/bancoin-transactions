@@ -1,16 +1,16 @@
 /**
  * @module index
  */
-import { base58Encode, blake2b, concat, signBytes, address } from '@waves/ts-lib-crypto'
-import { serializePrimitives } from '@waves/marshall'
+import { base58Encode, blake2b, concat, signBytes, address } from '@bancoin/ts-lib-crypto'
+import { serializePrimitives } from '@bancoin/marshall'
 const {STRING} = serializePrimitives
 import { getSenderPublicKey, convertToPairs } from '../generic'
 import { IAuthParams, IAuth } from '../transactions'
 import { validate } from '../validators'
-import { LEN, SHORT } from '@waves/marshall/dist/serializePrimitives';
+import { LEN, SHORT } from '@bancoin/marshall/dist/serializePrimitives';
 
 export const serializeAuthData = (auth: {host: string, data: string}) => concat(
-    LEN(SHORT)(STRING)('WavesWalletAuthentication'),
+    LEN(SHORT)(STRING)('BancoinWalletAuthentication'),
     LEN(SHORT)(STRING)(auth.host || ''),
     LEN(SHORT)(STRING)(auth.data || ''),
 )

@@ -1,10 +1,10 @@
 /**
  * @module index
  */
-import { signBytes, blake2b, base58Encode, publicKey, concat } from '@waves/ts-lib-crypto'
-import { schemas, serializePrimitives } from '@waves/marshall'
+import { signBytes, blake2b, base58Encode, publicKey, concat } from '@bancoin/ts-lib-crypto'
+import { schemas, serializePrimitives } from '@bancoin/marshall'
 import { IDataEntry } from '../transactions'
-import { serializerFromSchema } from '@waves/marshall/dist/serialize'
+import { serializerFromSchema } from '@bancoin/marshall/dist/serialize'
 import { validate } from '../validators'
 
 export interface ICustomDataV1 {

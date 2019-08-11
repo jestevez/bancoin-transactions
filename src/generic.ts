@@ -4,7 +4,7 @@ import {
   WithSender, TOrder
 } from './transactions'
 import { TSeedTypes } from './types'
-import { publicKey } from '@waves/ts-lib-crypto'
+import { publicKey } from '@bancoin/ts-lib-crypto'
 
 export const mapObj = <T, U, K extends string>(obj: Record<K, T>, f: (v: T) => U): Record<K, U> =>
   Object.entries<T>(obj).map(([k, v]) => [k, f(v)] as [string, U])
@@ -72,5 +72,5 @@ export function fee(params: IBasicParams, def: number) {
 
 export function normalizeAssetId(assetId: string | null) {
   assetId = assetId || null;
-  return assetId === 'WAVES' ? null : assetId;
+  return assetId === 'BCT' ? null : assetId;
 }

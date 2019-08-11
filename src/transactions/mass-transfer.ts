@@ -4,8 +4,8 @@
 import { TRANSACTION_TYPE, IMassTransferTransaction, IMassTransferParams, WithId, WithSender } from '../transactions'
 import { addProof, convertToPairs, fee, getSenderPublicKey, normalizeAssetId } from '../generic'
 import { TSeedTypes } from '../types'
-import { base58Encode, blake2b, signBytes } from '@waves/ts-lib-crypto'
-import { binary } from '@waves/marshall'
+import { base58Encode, blake2b, signBytes } from '@bancoin/ts-lib-crypto'
+import { binary } from '@bancoin/marshall'
 import { validate } from '../validators'
 
 
