@@ -1,7 +1,7 @@
 /**
  * @module index
  */
-import {serializePrimitives} from '@waves/marshall'
+import {serializePrimitives} from '@bancoin/marshall'
 const {
   BASE58_STRING,
   BASE64_STRING,
@@ -13,7 +13,7 @@ const {
   SHORT,
   STRING,
 } = serializePrimitives
-import { concat, blake2b, signBytes, base58Encode } from '@waves/ts-lib-crypto'
+import { concat, blake2b, signBytes, base58Encode } from '@bancoin/ts-lib-crypto'
 import {
   IDataTransaction,
   TRANSACTION_TYPE,
@@ -25,7 +25,7 @@ import {
 } from '../transactions'
 import { addProof, convertToPairs, fee, getSenderPublicKey } from '../generic'
 import { TSeedTypes } from '../types'
-import { binary } from '@waves/marshall'
+import { binary } from '@bancoin/marshall'
 import { validate } from '../validators'
 
 const typeMap: any = {

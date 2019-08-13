@@ -1,4 +1,4 @@
-import { publicKey, verifySignature } from '@waves/ts-lib-crypto'
+import { publicKey, verifySignature } from '@bancoin/ts-lib-crypto'
 import { reissue, signTx, data, burn, broadcast } from '../src'
 import { serialize, verify } from '../src/general'
 import { reissueMinimalParams, burnMinimalParams, orderMinimalParams } from './minimalParams'
@@ -43,7 +43,7 @@ describe('signTx', () => {
 })
 
 describe('Node interaction', () => {
-  const nodeUrl = 'https://nodes.wavesplatform.com/'
+  const nodeUrl = 'https://nodes.bancoinplatform.com/'
 
   it('should send tx to node', async () => {
     const dataParams = {

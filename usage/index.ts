@@ -51,7 +51,7 @@ function use(filename: string) {
   var file = readFileSync(filename, { encoding: 'utf8' })
   const regex = /import\s+\{\s*(\w+)\s*\}\s*from\s+('|")[\w\.\/]+('|")/gm
   file = file.replace(regex, (s, a) => {
-    return `const { ${a} } = require('@waves/waves-transactions')`
+    return `const { ${a} } = require('@bancoin/bancoin-transactions')`
   })
 
   runInNewContext(file, box)

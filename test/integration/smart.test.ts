@@ -1,5 +1,5 @@
 import { broadcast, ISetScriptParams, massTransfer, setScript, waitForTx } from '../../src'
-import { address, publicKey } from '@waves/ts-lib-crypto'
+import { address, publicKey } from '@bancoin/ts-lib-crypto'
 import { MASTER_SEED, CHAIN_ID, TIMEOUT, API_BASE, randomHexString } from './config'
 import { data, invokeScript } from '../../src'
 import { DATA_FIELD_TYPE } from '../../src/transactions'
@@ -86,7 +86,7 @@ describe('Smart features', () => {
 
     it('Should set dapp account', async () => {
       // Set script
-      // This script has one function 'foo'. It accepts integer and sends you this integer amount of waves
+      // This script has one function 'foo'. It accepts integer and sends you this integer amount of bancoin
       /*
       {-# STDLIB_VERSION 3 #-}
       {-# CONTENT_TYPE DAPP #-}

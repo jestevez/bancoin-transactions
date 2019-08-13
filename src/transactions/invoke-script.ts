@@ -8,10 +8,10 @@ import {
   IInvokeScriptParams,
   IInvokeScriptTransaction, IInvokeScriptPayment
 } from '../transactions'
-import { signBytes, blake2b, base58Encode, } from '@waves/ts-lib-crypto'
+import { signBytes, blake2b, base58Encode, } from '@bancoin/ts-lib-crypto'
 import { addProof, getSenderPublicKey, convertToPairs, fee, networkByte, normalizeAssetId } from '../generic'
 import { TSeedTypes } from '../types'
-import { binary } from '@waves/marshall'
+import { binary } from '@bancoin/marshall'
 import { validate } from '../validators'
 
 
@@ -51,4 +51,4 @@ export function invokeScript(paramsOrTx: any, seed?: TSeedTypes): IInvokeScriptT
 
 const mapPayment = (payments?: IInvokeScriptPayment[]): IInvokeScriptPayment[] => payments == null
   ? []
-  : payments.map(pmt => ({...pmt, assetId: pmt.assetId === 'WAVES' ? null : pmt.assetId}))
+  : payments.map(pmt => ({...pmt, assetId: pmt.assetId === 'BCT' ? null : pmt.assetId}))

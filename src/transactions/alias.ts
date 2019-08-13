@@ -2,8 +2,8 @@
  * @module index
  */
 import { TRANSACTION_TYPE, IAliasParams, IAliasTransaction, WithId, WithSender } from '../transactions'
-import { binary } from '@waves/marshall'
-import { base58Encode, blake2b, signBytes } from '@waves/ts-lib-crypto'
+import { binary } from '@bancoin/marshall'
+import { base58Encode, blake2b, signBytes } from '@bancoin/ts-lib-crypto'
 import { addProof, convertToPairs, fee, getSenderPublicKey, networkByte } from '../generic'
 import { TSeedTypes } from '../types'
 import { validate } from '../validators'

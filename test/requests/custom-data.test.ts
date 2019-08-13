@@ -1,7 +1,7 @@
 import { customData, serializeCustomData } from '../../src/requests/custom-data'
 import { verifyCustomData } from '../../src/general'
 import { DATA_FIELD_TYPE } from '../../src/transactions'
-import { base58Encode, blake2b } from '@waves/ts-lib-crypto'
+import { base58Encode, blake2b } from '@bancoin/ts-lib-crypto'
 
 describe('custom-data', () => {
 

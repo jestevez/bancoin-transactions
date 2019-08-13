@@ -1,7 +1,7 @@
-import { publicKey, verifySignature } from '@waves/ts-lib-crypto'
+import { publicKey, verifySignature } from '@bancoin/ts-lib-crypto'
 import { massTransfer } from '../../src'
 import { massTransferMinimalParams } from '../minimalParams'
-import { binary } from '@waves/marshall'
+import { binary } from '@bancoin/marshall'
 
 describe('massTransfer', () => {
 

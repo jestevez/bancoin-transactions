@@ -1,11 +1,11 @@
 /**
  * @module index
  */
-import { signBytes, blake2b, base58Encode } from '@waves/ts-lib-crypto'
+import { signBytes, blake2b, base58Encode } from '@bancoin/ts-lib-crypto'
 import { addProof, getSenderPublicKey, convertToPairs, isOrder } from '../generic'
 import { IOrder, IOrderParams, TOrder, WithId, WithSender } from '../transactions'
 import { TSeedTypes } from '../types'
-import { binary } from '@waves/marshall'
+import { binary } from '@bancoin/marshall'
 import { validate } from '../validators'
 
 
@@ -17,12 +17,12 @@ import { validate } from '../validators'
  *
  * ### Usage
  * ```js
- * const { order } = require('waves-transactions')
+ * const { order } = require('bancoin-transactions')
  *
  * const seed = 'b716885e9ba64442b4f1263c8e2d8671e98b800c60ec4dc2a27c83e5f9002b18'
  *
  * const params = {
- *   amount: 100000000, //1 waves
+ *   amount: 100000000, //1 BCT
  *   price: 10, //for 0.00000010 BTC
  *   priceAsset: '8LQW8f7P5d5PZM7GtZEBgaqRPGSzS3DfPuiXrURJ4AJS',
  *   matcherPublicKey: '7kPFrHDiGw1rCm7LPszuECwWYL3dMf6iMifLRDJQZMzy',
@@ -89,7 +89,7 @@ export function order(paramsOrOrder: any, seed?: TSeedTypes): TOrder & WithId {
   }
 
   if (ord.version === 3) {
-    ord.matcherFeeAssetId = paramsOrOrder.matcherFeeAssetId === 'WAVES' ? null : paramsOrOrder.matcherFeeAssetId
+    ord.matcherFeeAssetId = paramsOrOrder.matcherFeeAssetId === 'BCT' ? null : paramsOrOrder.matcherFeeAssetId
   }
 
   const bytes = binary.serializeOrder(ord)

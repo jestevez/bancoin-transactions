@@ -1,4 +1,4 @@
-import { base58Decode, base64Decode, keccak, blake2b, stringToBytes } from '@waves/ts-lib-crypto'
+import { base58Decode, base64Decode, keccak, blake2b, stringToBytes } from '@bancoin/ts-lib-crypto'
 
 
 const TX_DEFAULTS = {
@@ -181,7 +181,7 @@ export const isPublicKey = isHash
 
 
 export const isAssetId = ifElse(
-    orEq(['', null, undefined, 'WAVES']),
+    orEq(['', null, undefined, 'BCT']),
     defaultValue(true),
     isHash
 );
